@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from .views import email_page,home_page,service_page,about_page
 from career.views import career_page,jobDetailsPage,job_apply_form
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_page,name='home'),
@@ -28,3 +30,6 @@ urlpatterns = [
     path('career/job/<int:job_id>',jobDetailsPage,name='jobdetail'),
     path('career/job/jobapply/<int:job_id>',job_apply_form,name='jobapply'),
 ]
+
+if settings.DEBUG:
+    urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
