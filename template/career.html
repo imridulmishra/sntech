@@ -1,0 +1,27 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Snoffle{% endblock %}
+
+{% block mainbody %}
+<div class="text-center mt-5 pb-4">
+    <p class="fs-1 fw-light">Job Opening</p>
+</div>
+{% if error %}
+{{error}}
+{% else %}
+
+<div class="row w-75 mx-auto pb-5">
+  {% for job in jobset %}
+  <div class="col-sm-4 my-3 ">
+      <div class="card border text-light"style="background-color:black">
+        <div class="card-body">
+          <h5 class="card-title">{{job.role}}</h5>
+          <p class="card-text">{{job.experience}}<br>{{job.created_on}}</p>
+          <a href="{% url 'jobdetail' job.id %}" class="btn border text-light pb-2 ">See Details</a>
+        </div>
+      </div> 
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

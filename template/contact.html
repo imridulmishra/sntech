@@ -1,0 +1,46 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Snoffle{% endblock %}
+
+{% block mainbody %}
+<!-- End Navbar -->
+
+  <!-- Contact Us Heading -->
+  <h1 class="text-center pt-5 mt-3"> Contact Us</h1>
+  <!-- Form -->
+    {% if error_message %}
+    <h4>{{error_message}}</h4>
+     {% endif %}
+  <form class="w-50 mx-auto py-5 mt-5" method='POST' style="margin-bottom: 70px;">
+    {% csrf_token %}
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control text-light" name="fullname" id="floatingInput" placeholder="name@example.com" style="background-color: black;">
+      <label for="floatingInput">Fullname</label>
+    </div>
+      <div class="form-floating my-3">
+          <input type="text" class="text-light form-control" id="tel" name="mobile_number" placeholder="name@example.com" required style="background-color: black;">
+          <label for="floatingPassword">Mobile Number</label>
+          <span class="text-danger" style="font-size:12px;display:none" id="phone-error">Enter Valid Phone Number</span>
+          <span class="text-success" style="font-size:12px;display:none" id="phone-success">Valid Number</span>
+      </div>
+      <div class="form-floating my-3">
+          <input type="email" class="text-light form-control" id="floatingPassword" placeholder="name@example.com" name="email" required style="background-color: black;">
+          <label for="floatingPassword">E-Mail</label>
+          <span class="text-danger" style="font-size:12px;display:none" id="email-error">Enter Valid Email ID</span>
+          <span class="text-success" style="font-size:12px;display:none" id="email-success">Valid</span>
+      </div>
+      <select class="form-select  text-light my-3" aria-label="Default select example" name="select" required style="background-color: black;">
+          <option selected value="0">What are you looking for</option>
+          <option value="1">Job</option>
+          <option value="2">Internship</option>
+          <option value="3">Services</option>
+        </select>
+        <div class="form-floating my-3">
+          <textarea class="form-control text-light" placeholder="name@example.com"  name="comment" id="floatingTextarea" style="background-color: black;"></textarea>
+          <label for="floatingTextarea">Comments</label>
+        </div>
+        <div class="text-center pt-3">
+              <button type="submit" class="btn btn-dark  my-2 w-50 border" style="background-color: black;">Submit</button>
+      </div>
+  </form>
+{% endblock %}

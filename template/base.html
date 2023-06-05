@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+    <script>
+      window.onscroll = function() {myFunction()};
+      function myFunction() {
+        if (document.documentElement.scrollTop) {
+          document.getElementById("Default_Navbar").classList.add('black');
+          document.getElementById("Navbar_logo_img").src="{% static '/logoo_Black_color.jpg' %}";
+          document.getElementById("Nav_Item_1").style.color='black';
+          document.getElementById("Nav_Item_2").style.color='black';
+          document.getElementById("Nav_Item_3").style.color='black';
+          document.getElementById("Nav_Item_4").style.color='black';
+          document.getElementById("Nav_Item_5").style.color='black';
+        } else {
+          document.getElementById("Default_Navbar").classList.remove('black');
+          document.getElementById("Navbar_logo_img").src="{% static '/logoo.png' %}";
+          document.getElementById("Nav_Item_1").style.color='white';
+          document.getElementById("Nav_Item_2").style.color='white';
+          document.getElementById("Nav_Item_3").style.color='white';
+          document.getElementById("Nav_Item_4").style.color='white';
+          document.getElementById("Nav_Item_5").style.color='white';
+        }
+      }
+      </script>
+</head>
+<body class='remove-scrollbar'>
+    <div class="d-flex py-2 Default_Navbar justify-content-between fixed-top" id="Default_Navbar">
+        <div>
+            <img src="{% static '/logoo.png' %}" id="Navbar_logo_img" class="ms-3" width="130px" height="35px" alt="logo">
+        </div>
+        <div>
+                <ul class="px-5 d-flex text-primary" id="Nav_Item">
+                    <li class="p-1 px-3"><a href="{% url 'home' %}"id="Nav_Item_1">Home</a></li>
+                    <li class="p-1 px-3"><a href="{% url 'service' %}"id="Nav_Item_2">Services</a></li>
+                    <li class="p-1 px-3"><a href="{% url 'about' %}"id="Nav_Item_3">About Us</a></li>
+                    <li class="p-1 px-3"><a href="{% url 'career' %}"id="Nav_Item_4">Career</a></li>
+                    <li class="p-1 px-3"><a href="{% url 'email_page' %}"id="Nav_Item_5">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-bottom  responsive_navbar py-2 justify-content-between fixed-top"style="background-color:black;">
+        <div>
+            <img src="{% static '/logoo.png' %}"  class="ms-3" width="120px" height="35px" alt="logo">
+        </div>
+      <button class="btn btn-outline-light"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        ≡
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header border-end text-light btn-light"style="background-color:black" >
+          <h5 class="offcanvas-title text-center text-light fw-light" id="offcanvasExampleLabel">Snoffle</h5>
+          <button type="button" class="btn-close text-reset border text-light" data-bs-dismiss="offcanvas" aria-label="Close">x</button>
+        </div>
+        <div class="offcanvas-body border-end text-center fs-4 fw-light"style="background-color:black">
+         <ul>
+            <li class="border-start border-end my-2"><a href="{% url 'home' %}">Home</a></li>
+            <li class="border-start border-end my-2"><a href="{% url 'service' %}">Services</a></li>
+            <li class="border-start border-end my-2"><a href="{% url 'about' %}">About Us</a></li>
+            <li class="border-start border-end my-2"><a href="{% url 'career' %}">Career</a></li>
+            <li class="border-start border-end my-2"><a href="{% url 'email_page' %}">Contact Us</a></li>
+         </ul>
+        </div>
+      </div>
+    </div>
+    {% block mainbody %}{% endblock %}
+    <footer class="new_footer_area bg_color border-top">
+        <div class="new_footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5">
+                        <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                          <img src="{% static '/logoo.png' %}" class="pb-3" alt="" width="200px">
+                            <h3 class="f-title f_600 t_color f_size_18">Get in Touch with Snoffle</h3>
+                            <!-- <p>Don’t miss any updates of our new templates and extensions.!</p> -->
+                            <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                                <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                                <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                                <p class="mchimp-errmessage" style="display: none;"></p>
+                                <p class="mchimp-sucmessage" style="display: none;"></p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ms-4 col-md-6">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">Jobs/Internships</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="service.html">Web Development</a></li>
+                                <li><a href="service.html">Web Development</a></li>
+                                <li><a href="service.html">Web Development</a></li>
+                                <li><a href="service.html">Android Develpment</a></li>
+                                <li><a href="service.html">Android Develpment</a></li>
+                                <li><a href="service.html">Android Develpment</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 me-2 col-md-5 ">
+                        <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                            <ul class="list-unstyled f_list">
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Term &amp; conditions</a></li>
+                                <li><a href="#">Reporting</a></li>
+                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#">Support Policy</a></li>
+                                <li><a href="#">Privacy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  col-md-5">
+                        <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                            <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                            <div class="f_social_icon">
+                                <a href="#" class=""><img src="https://icon-library.com/images/twitter-icon-png-white/twitter-icon-png-white-12.jpg" width="32px" alt=""></a>
+                                <a href="#" class=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9bW1urq6uAgIDV1dViYmLS0tL4+Pji4uLZ2dmjo6Po6OjExMTe3t7IyMi+vr6ZmZm2trYXFxe3t7fs7OwJCQkhISF2dnaPj4+lpaVeXl5ISEiUlJR4eHhoaGgyMjIuLi47OztCQkInJydTU1MxMTGfLaxiAAADgUlEQVR4nO3d21IiMRSFYZvG4SxnOYMyOu//iDMXWtpFI+x0Zq+V1PrvvLHyFdJg0kk/POBanVvr9mazOUyng4+2ZVluP3+YfrYDDjKs5/16Ouovi3sboAds6zTo3G9LTrjaPBpxSQnn7U4ILxnha2n92/xqix78PZXdYF9RlOjR367dxJeA8Bx0eUlIuG72Av5rhib83KCpj104ag7kFo4jAIsFWvFDkxhAZuEsCpBYuIkDLCZoyLX2kYC8wvAvookII3wQfjRCU+o7RwMWY7Slvhgf9dTCaJcZWmHEl5BT+BYRWHTQmroO2QuHuQsjflSQCqP+kRaPaE5NTWdm6IXzxlMz7MJTVCCjMO7bsOijPZdFmZ356gntuayXu3AV90JDKPwdF1j00KCLWpGFQzToomP2wliziLzCBnNQ3br4rjSlGdYfrM/oUVuyTub33tEjtrawAZdz9IDNGVecTujx2rPNsy3Rww3I9sWbd+3serZ7nzbo4QZkEyb4NjTO0uzRww2obxK+oIcbkE34hh5uQE8m4Qo93IBswvS+0VinafIXPqOHG5CEEvJnWx7NXtjNX4gebUgSSsifSZjiNI2EEiaQSci3sHRHElbiW8K+Iwkr8S1/fut116rNtNFi+F7/S76FW15sWyQNwl2MvIS4/YdewkP2wnb2Qtz6m5cQt/7mJcSt3XgJYUAvIfD/Kych8HudkxC4dc1JCLzhxkkIPIDHSQi8pchJeMxe2Mpe+JK9ELjA6CTEAZ2EyMUpHyFyutFHiNzn7CNEnmziI0Se9OUjRJ586SPEzbR5CZF3uvsIkXe6+wiRm9pchF3kne4uwiXyzj4XIXQF1UUIPTLCRQg9js5FCD3q2kUI3bznIlwnL+x26huPx6NJOThCt9T8Of2qa2e72wQpCM2030JCyiSUkD+TMMm7LyWUkD8JJeTPdOKAhJRJKCF/Elai3hV0LQkl5E/C9IWm08wkpExCCfmTsBLhwytuJ6GE/EkoIX+ms6AlpExCCfmTsBLhg/FuJ6GE/EmYvtD0FBYJKZNQQv4krMT44PSbSSghfxJKyJ+EEvJnEgJPtgxPwvSFpucBS0iZhBLyJ6GE/OUvHEkoIX0SSsifhJWgZ+qFlr9wIqGE9EkoIX8SSsjfQkIJ6ZNQQv4krDRBjzakmYQS0iehhPzlL8z/E/9YGvrfD477C47JUcbglne0AAAAAElFTkSuQmCC" width="26px" alt=""></a>
+                                <a href="#" class=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9bW1urq6uAgIDV1dViYmLS0tL4+Pji4uLZ2dmjo6Po6OjExMTe3t7IyMi+vr6ZmZm2trYXFxe3t7fs7OwJCQkhISF2dnaPj4+lpaVeXl5ISEiUlJR4eHhoaGgyMjIuLi47OztCQkInJydTU1MxMTGfLaxiAAADgUlEQVR4nO3d21IiMRSFYZvG4SxnOYMyOu//iDMXWtpFI+x0Zq+V1PrvvLHyFdJg0kk/POBanVvr9mazOUyng4+2ZVluP3+YfrYDDjKs5/16Ouovi3sboAds6zTo3G9LTrjaPBpxSQnn7U4ILxnha2n92/xqix78PZXdYF9RlOjR367dxJeA8Bx0eUlIuG72Av5rhib83KCpj104ag7kFo4jAIsFWvFDkxhAZuEsCpBYuIkDLCZoyLX2kYC8wvAvookII3wQfjRCU+o7RwMWY7Slvhgf9dTCaJcZWmHEl5BT+BYRWHTQmroO2QuHuQsjflSQCqP+kRaPaE5NTWdm6IXzxlMz7MJTVCCjMO7bsOijPZdFmZ356gntuayXu3AV90JDKPwdF1j00KCLWpGFQzToomP2wliziLzCBnNQ3br4rjSlGdYfrM/oUVuyTub33tEjtrawAZdz9IDNGVecTujx2rPNsy3Rww3I9sWbd+3serZ7nzbo4QZkEyb4NjTO0uzRww2obxK+oIcbkE34hh5uQE8m4Qo93IBswvS+0VinafIXPqOHG5CEEvJnWx7NXtjNX4gebUgSSsifSZjiNI2EEiaQSci3sHRHElbiW8K+Iwkr8S1/fut116rNtNFi+F7/S76FW15sWyQNwl2MvIS4/YdewkP2wnb2Qtz6m5cQt/7mJcSt3XgJYUAvIfD/Kych8HudkxC4dc1JCLzhxkkIPIDHSQi8pchJeMxe2Mpe+JK9ELjA6CTEAZ2EyMUpHyFyutFHiNzn7CNEnmziI0Se9OUjRJ586SPEzbR5CZF3uvsIkXe6+wiRm9pchF3kne4uwiXyzj4XIXQF1UUIPTLCRQg9js5FCD3q2kUI3bznIlwnL+x26huPx6NJOThCt9T8Of2qa2e72wQpCM2030JCyiSUkD+TMMm7LyWUkD8JJeTPdOKAhJRJKCF/Elai3hV0LQkl5E/C9IWm08wkpExCCfmTsBLhwytuJ6GE/EkoIX+ms6AlpExCCfmTsBLhg/FuJ6GE/EmYvtD0FBYJKZNQQv4krMT44PSbSSghfxJKyJ+EEvJnEgJPtgxPwvSFpucBS0iZhBLyJ6GE/OUvHEkoIX0SSsifhJWgZ+qFlr9wIqGE9EkoIX8SSsjfQkIJ6ZNQQv4krDRBjzakmYQS0iehhPzlL8z/E/9YGvrfD477C47JUcbglne0AAAAAElFTkSuQmCC" width="26px" alt=""></a>
+                                <a href="#" class=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9bW1urq6uAgIDV1dViYmLS0tL4+Pji4uLZ2dmjo6Po6OjExMTe3t7IyMi+vr6ZmZm2trYXFxe3t7fs7OwJCQkhISF2dnaPj4+lpaVeXl5ISEiUlJR4eHhoaGgyMjIuLi47OztCQkInJydTU1MxMTGfLaxiAAADgUlEQVR4nO3d21IiMRSFYZvG4SxnOYMyOu//iDMXWtpFI+x0Zq+V1PrvvLHyFdJg0kk/POBanVvr9mazOUyng4+2ZVluP3+YfrYDDjKs5/16Ouovi3sboAds6zTo3G9LTrjaPBpxSQnn7U4ILxnha2n92/xqix78PZXdYF9RlOjR367dxJeA8Bx0eUlIuG72Av5rhib83KCpj104ag7kFo4jAIsFWvFDkxhAZuEsCpBYuIkDLCZoyLX2kYC8wvAvookII3wQfjRCU+o7RwMWY7Slvhgf9dTCaJcZWmHEl5BT+BYRWHTQmroO2QuHuQsjflSQCqP+kRaPaE5NTWdm6IXzxlMz7MJTVCCjMO7bsOijPZdFmZ356gntuayXu3AV90JDKPwdF1j00KCLWpGFQzToomP2wliziLzCBnNQ3br4rjSlGdYfrM/oUVuyTub33tEjtrawAZdz9IDNGVecTujx2rPNsy3Rww3I9sWbd+3serZ7nzbo4QZkEyb4NjTO0uzRww2obxK+oIcbkE34hh5uQE8m4Qo93IBswvS+0VinafIXPqOHG5CEEvJnWx7NXtjNX4gebUgSSsifSZjiNI2EEiaQSci3sHRHElbiW8K+Iwkr8S1/fut116rNtNFi+F7/S76FW15sWyQNwl2MvIS4/YdewkP2wnb2Qtz6m5cQt/7mJcSt3XgJYUAvIfD/Kych8HudkxC4dc1JCLzhxkkIPIDHSQi8pchJeMxe2Mpe+JK9ELjA6CTEAZ2EyMUpHyFyutFHiNzn7CNEnmziI0Se9OUjRJ586SPEzbR5CZF3uvsIkXe6+wiRm9pchF3kne4uwiXyzj4XIXQF1UUIPTLCRQg9js5FCD3q2kUI3bznIlwnL+x26huPx6NJOThCt9T8Of2qa2e72wQpCM2030JCyiSUkD+TMMm7LyWUkD8JJeTPdOKAhJRJKCF/Elai3hV0LQkl5E/C9IWm08wkpExCCfmTsBLhwytuJ6GE/EkoIX+ms6AlpExCCfmTsBLhg/FuJ6GE/EmYvtD0FBYJKZNQQv4krMT44PSbSSghfxJKyJ+EEvJnEgJPtgxPwvSFpucBS0iZhBLyJ6GE/OUvHEkoIX0SSsifhJWgZ+qFlr9wIqGE9EkoIX8SSsjfQkIJ6ZNQQv4krDRBjzakmYQS0iehhPzlL8z/E/9YGvrfD477C47JUcbglne0AAAAAElFTkSuQmCC" width="26px" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    {% block script %}{% endblock %}
+</body>
+</html>

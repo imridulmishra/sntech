@@ -1,0 +1,114 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Snoffle{% endblock %}
+{% block mainbody %}
+<div style="position: relative;" >
+    <img src="{% static 'backgound.avif' %}"  width="100%" height="740px" alt="backgound_img">
+    <!-- Animation -->
+    <div  style="position: absolute;top: 43%;left: 40%;">
+        <h1 class="fw-light" style="font-size: 600%;">Snoffle</h1>
+        <div style="height: 60px;overflow: hidden;">
+            <h1 class="element fw-light"></h1>
+          </div>
+        </div>
+        <p class="fw-light text-center mx-auto fs-4"style="position: absolute;top: 80%;left:47%">Scroll Down</p>
+        <div>
+          <svg class="arrows">
+            <path class="a1" d="M0 0 L30 32 L60 0"></path>
+            <path class="a2" d="M0 20 L30 52 L60 20"></path>
+            <path class="a3" d="M0 40 L30 72 L60 40"></path>
+          </svg>
+      </div>
+</div>
+
+<div class=" my-5 py-5">
+    <p class="text-center my-5 fw-light fs-1">What We Do?</p>
+      <section class="cards row justify-content-center m-0">
+        <!-- Card 1 -->
+          <article class="card col-lg-3 col-md-5 card--1 m-4 p-0 ">
+            <div class="card__img"></div>
+            <a href="#" class="card_link bg-dark">
+               <div class="card__img--hover"></div>
+             </a>
+            <div class="card__info">
+              <span class="card__category">Internship</span>
+              <h3 class="card__title"><a href="service.html">Web Developoment</a></h3>
+              <a href="service.html"><button class="btn btn-outline-dark w-100">Visit</button></a>
+            </div>
+          </article>
+           <!-- Card 2 -->
+          <article class="card  col-lg-3 col-md-5 card--2 m-4 p-0">
+            <div class="card__img"></div>
+            <a href="#" class="card_link">
+               <div class="card__img--hover"></div>
+             </a>
+            <div class="card__info">
+              <span class="card__category">Internship</span>
+              <h3 class="card__title">Web Develpoment</h3>
+              <a href="service.html"><button class="btn btn-outline-dark w-100">Visit</button></a>
+            </div>
+          </article>        
+           <!-- Card 3 -->
+          <article class="card  col-lg-3 col-md-5 card--2 m-4 p-0">
+            <div class="card__img"></div>
+            <a href="#" class="card_link">
+               <div class="card__img--hover"></div>
+             </a>
+            <div class="card__info">
+              <span class="card__category">Internship</span>
+              <h3 class="card__title">Web Develpoment</h3>
+              <a href="service.html"><button class="btn btn-outline-dark w-100">Visit</button></a>
+            </div>
+          </article>        
+           <!-- Card 4 -->
+          <article class="card  col-lg-3 col-md-5 card--2 m-4 p-0">
+            <div class="card__img"></div>
+            <a href="#" class="card_link">
+               <div class="card__img--hover"></div>
+             </a>
+            <div class="card__info">
+              <span class="card__category">Internship</span>
+              <h3 class="card__title">Web Develpoment</h3>
+              <a href="service.html"><button class="btn btn-outline-dark w-100">Visit</button></a>
+            </div>
+          </article>        
+           <!-- Card 5 -->
+          <article class="card  col-lg-3 col-md-5 card--2 m-4 p-0">
+            <div class="card__img"></div>
+            <a href="#" class="card_link">
+               <div class="card__img--hover"></div>
+             </a>
+            <div class="card__info">
+              <span class="card__category">Internship</span>
+              <h3 class="card__title">Web Develpoment</h3>
+              <a href="service.html"><button class="btn btn-outline-dark w-100">Visit</button></a>
+            </div>
+          </article>        
+           <!-- Card 6 -->
+          <article class="card  col-lg-3 col-md-5 card--2 m-4 p-0">
+            <div class="card__img"></div>
+            <a href="#" class="card_link">
+               <div class="card__img--hover"></div>
+             </a>
+            <div class="card__info">
+              <span class="card__category">Internship</span>
+              <h3 class="card__title">Web Develpoment</h3>
+              <a href="service.html"><button class="btn btn-outline-dark w-100">Visit</button></a>
+            </div>
+          </article>        
+      </section>
+  </div>
+  <!-- End Body -->
+{% endblock %}
+
+{% block script %}
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+   var typed = new Typed('.element', {
+strings: ["We Make Developers", "We Make Developers"],
+typeSpeed: 150,
+backSpeed:150,
+loop:true
+});
+</script>
+{% endblock %}

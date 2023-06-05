@@ -1,0 +1,36 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block title %}Snoffle{% endblock %}
+
+{% block mainbody %}
+
+<div class="row col-lg-6 mx-auto border rounded p-5 mt-5">    
+        <form method="POST" enctype="multipart/form-data" class="w-50 mx-auto py-5">
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control text-light" name="name" id="name" placeholder="name@example.com" style="background-color: black;" required>
+            <label for="name">Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="tel" class="form-control text-light" name="number" id="number" placeholder="name@example.com" style="background-color: black;" required>
+            <label for="number">Phone Number</label>
+            <span class="text-danger" style="font-size:12px;display:none" id="phone-error">Enter Valid Phone Number</span>
+                <span class="text-success" style="font-size:12px;display:none" id="phone-success">Valid Number</span>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control text-light" name="email" id="email" placeholder="name@example.com" style="background-color: black;" required>
+            <label for="email">Email</label>
+            <span class="text-danger" style="font-size:12px;display:none" id="email-error">Enter Valid Email ID</span>
+                <span class="text-success" style="font-size:12px;display:none" id="email-success">Valid</span>
+          </div>
+          <div class="mb-3">
+              <label for="file" class="form-label">Upload Resume/CV (PDF or DOC)</label>
+              <input class="form-control text-light" type="file" id="file" name="file" accept=".pdf,.doc,.docx" placeholder="name@example.com" style="background-color: black;" required>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-dark text-light">Submit</button>
+            </div
+        </form>
+</div>
+{% endblock %}

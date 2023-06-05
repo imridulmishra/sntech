@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block title %}Snoffle{% endblock %}
+
+{% block mainbody %}
+
+<div class="row col-lg-6 mx-auto border rounded p-5 mt-5">    
+    <h2 class="mx-auto text-light">Application successfull</h2>
+    <a href="{% url 'home' %}" class="mx-auto text-light">Home</a>
+</div>
+{% endblock %}

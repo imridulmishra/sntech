@@ -1,0 +1,48 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Snoffle{% endblock %}
+
+{% block mainbody %}
+<div class="row col-lg-6 mx-auto border rounded p-5 mt-5">
+  <!-- Section One -->
+  <h2 class="fw-light pb-3">We Are Currently Hiring For {{job.role}}</h2>
+  <h5 >Job Description: {{job.discription}}</h5>
+  <h5 >Basic Details: </h5>
+  <h5 class=""><span class="fw-bold">Location: </span>{{job.location}}</h5>
+  <h5>Experience: {{job.experience}}</h5>
+  <h5>Vacancies: {{job.vacancies}}</h5>
+  <h5 class="mb-4"><span class="fw-bold">Required Skills Set:</span> {{job.skills}} </h5>
+
+  <!-- Section Two -->
+  <div class="">
+    <div class="d-flex w-75 justify-content-between">
+        <h5>Category</h5>
+        <span class="fs-5">{{job.category}}</span>
+    </div>
+</div>
+  <div class="">
+      <div class="d-flex w-75 justify-content-between">
+          <h5>Job Function</h5>
+          <span class="fs-5">{{job.jobfunction}}</span>
+      </div>
+  </div>
+  <div class="">
+      <div class="d-flex w-75 justify-content-between">
+          <h5>Role</h5>
+          <span class="fs-5">{{job.role}}</span>
+      </div>
+  </div>
+  <div class="">
+      <div class="d-flex w-75 justify-content-between">
+          <h5>Last date to apply</h5>
+          <span class="fs-5">{{job.last_date}}</span>
+      </div>
+  </div>
+  
+  <!-- Section Three -->
+  <h5 class="text-primary">Desired Candidate Profile</h4>
+  <h5><span class="fw-bold">Qualification:</span> {{job.qualification}}</h4>
+    <a href="{% url 'jobapply' job.id %}" class="btn btn-dark  my-2 w-50 border" style="background-color: black;">Apply here</a>
+
+</div>
+{% endblock %}

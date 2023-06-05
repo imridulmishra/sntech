@@ -1,0 +1,367 @@
+body{
+    background-color: rgb(17, 15, 15);
+    color: white;
+}
+.remove-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+li{
+    list-style: none;
+}
+li:hover{
+    text-decoration: underline blue;
+}
+li a{
+    text-decoration: none;
+}
+.Homepage_cards_tag{
+    text-decoration: none;
+    color: black;
+}
+.Homepage_cards_tag:hover{
+    text-decoration: underline blue;
+}
+.responsive_navbar{
+    display: none;
+}
+@media only screen and (max-width: 680px) {
+.responsive_navbar{
+    display: none;
+    display: flex;
+}
+}
+@media only screen and (max-width: 680px){ 
+    .Default_Navbar{
+        display: none!important;
+}
+}
+.Default_Navbar{
+    transition: background-color 2s ease;
+}
+
+.arrows {
+width: 60px;
+height: 72px;
+position: absolute;
+left: 50%;
+margin-left: -30px;
+bottom: 20px;
+}
+
+.arrows path {
+stroke: white;
+fill: transparent;
+stroke-width: 1px;  
+animation: arrow 2s infinite;
+-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+animation-delay:-1s;
+-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+animation-delay:-0.5s;
+-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 { 
+animation-delay:0s;
+-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
+
+/* HomePage Cards */
+
+
+.card--1 .card__img, .card--1 .card__img--hover {
+background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.card--2 .card__img, .card--2 .card__img--hover {
+background-image: url('https://images.pexels.com/photos/307008/pexels-photo-307008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+
+.card__img {
+visibility: hidden;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+width: 100%;
+height: 235px;
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+
+}
+
+.card__info-hover {
+position: absolute;
+padding: 16px;
+width: 100%;
+opacity: 0;
+top: 0;
+}
+
+.card__img--hover {
+width: 100px;
+transition: 0.2s all ease-out;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+width: 100%;
+position: absolute;
+height: 235px;
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+top: 0;
+
+}
+.card {
+transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+background-color: #fff;
+position: relative;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+}
+.card:hover {
+box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+transform: scale(1.10, 1.10);
+}
+
+.card__info {
+z-index: 2;
+background-color: #fff;
+border-bottom-left-radius: 12px;
+border-bottom-right-radius: 12px;
+padding: 16px 24px 24px 24px;
+background-color: black;
+}
+
+.card__category {
+font-family: 'Raleway', sans-serif;
+text-transform: uppercase;
+font-size: 13px;
+letter-spacing: 2px;
+font-weight: 500;
+color: #868686;
+}
+
+.card__title {
+margin-top: 5px;
+color: white;
+font-weight: 100;
+}
+
+
+.card:hover .card__img--hover {
+height: 100%;
+opacity: 0.3;
+}
+
+.card:hover .card__info {
+background-color: transparent;
+position: relative;
+color: black!important;
+}
+
+.card:hover .card__info-hover {
+opacity: 1;
+color: black!important;
+}
+
+a{
+text-decoration: none;
+color: white;
+}
+
+
+
+/* Footer */
+
+.new_footer_area {
+background: black;
+}
+
+
+.new_footer_top {
+padding: 120px 0px 50px;
+position: relative;
+overflow-x: hidden;
+}
+.new_footer_area .footer_bottom {
+padding-bottom: 50px;
+}
+.footer_bottom {
+font-size: 14px;
+font-weight: 300;
+line-height: 20px;
+color: #7f88a6;
+padding: 27px 0px;
+}
+.new_footer_top .company_widget p {
+font-size: 16px;
+font-weight: 300;
+line-height: 28px;
+color: #6a7695;
+margin-bottom: 20px;
+}
+.new_footer_top .company_widget .f_subscribe_two .btn_get {
+border-width: 1px;
+margin-top: 20px;
+}
+.btn_get_two:hover {
+background: transparent;
+color: grey;
+}
+.btn_get:hover {
+color: #fff;
+background: grey;
+border-color:grey;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
+text-decoration: none;
+outline: none;
+}
+.new_footer_top .f_widget.about-widget .f_list li a:hover {
+color: grey;
+text-decoration: none;
+}
+.new_footer_top .f_widget.about-widget .f_list li {
+margin-bottom: 11px;
+}
+.f_widget.about-widget .f_list li:last-child {
+margin-bottom: 0px;
+}
+.f_widget.about-widget .f_list li {
+margin-bottom: 15px;
+}
+.f_widget.about-widget .f_list {
+margin-bottom: 0px;
+}
+.new_footer_top .f_social_icon a {
+width: 44px;
+height: 44px;
+line-height: 43px;
+background: transparent;
+border: 1px solid #e2e2eb;
+font-size: 24px;
+}
+.f_social_icon a {
+width: 46px;
+height: 46px;
+border-radius: 50%;
+font-size: 14px;
+line-height: 45px;
+color: #858da8;
+display: inline-block;
+background: #ebeef5;
+text-align: center;
+-webkit-transition: all 0.2s linear;
+-o-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+.ti-facebook:before {
+content: "\e741";
+}
+.ti-twitter-alt:before {
+content: "\e74b";
+}
+.ti-vimeo-alt:before {
+content: "\e74a";
+}
+.ti-pinterest:before {
+content: "\e731";
+}
+
+.btn_get_two {
+-webkit-box-shadow: none;
+box-shadow: none;
+background: #fafbff;
+border-color: #fafbff;
+color: black;
+}
+
+.btn_get_two:hover {
+background: transparent;
+color:#fafbff;
+}
+
+.new_footer_top .f_social_icon a:hover {
+background:#fafbff;
+border-color:#fafbff;
+color:white;
+}
+.new_footer_top .f_social_icon a + a {
+margin-left: 4px;
+}
+.new_footer_top .f-title {
+margin-bottom: 30px;
+color:#fafbff;
+}
+.f_600 {
+font-weight: 600;
+}
+.f_size_18 {
+font-size: 18px;
+}
+h1, h2, h3, h4, h5, h6 {
+color: #fafbff;
+}
+.new_footer_top .f_widget.about-widget .f_list li a {
+color: #fafbff;
+}
+
+@-moz-keyframes myfirst {
+0% {
+left: -25%;
+}
+100% {
+left: 100%;
+}
+}
+
+@-webkit-keyframes myfirst {
+0% {
+left: -25%;
+}
+100% {
+left: 100%;
+}
+}
+
+@keyframes myfirst {
+0% {
+left: -25%;
+}
+100% {
+left: 100%;
+}
+}
+
+a{
+text-decoration: none;
+}
+.black{
+background-color: white;
+}
